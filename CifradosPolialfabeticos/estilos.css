@@ -5,8 +5,9 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #fcebb6;
         }
-
+        
         .container {
             display: flex;
             justify-content: space-around;
@@ -27,19 +28,20 @@
             align-items: center; 
             text-decoration: none;
             color: inherit;
+            border-radius: 10px;
         }
 
         .button:hover {
             transform: scale(1.05);
-            border: 2px solid black;
+            border: 5px solid #00b9bd;
         }
 
         .red-button {
-            background-color: red;
+            background-color: #940533;
             color: white;
         }
 
-        .blue-button {
-            background-color: blue;
+        .yellow-button {
+            background-color: #ffb300;
             color: white;
         }
