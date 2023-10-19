@@ -12,14 +12,23 @@ function cifrado(){
     textoCifrado.value = textoIngresado.split('').map(c=>{
         let mayus = (c === c.toUpperCase()) ? true : false; 
         let valorEntero = c.toLowerCase().charCodeAt(0);
-        if(valorEntero>= 97 && valorEntero<=122){
+         if(valorEntero>= 97 && valorEntero<=122){
+             const valorDesplazamiento = parseInt(desplazamiento.value);
+             if(valorEntero + valorDesplazamiento > 122){
+                 valorEntero = 97 + (valorEntero - 122) + valorDesplazamiento - 1;
+             }else{
+                 valorEntero = valorEntero + valorDesplazamiento
+             }
+         }else if (valorEntero >= 48 && valorEntero <= 57) { 
             const valorDesplazamiento = parseInt(desplazamiento.value);
-            if(valorEntero + valorDesplazamiento > 122){
-                valorEntero = 97 + (valorEntero - 122) + valorDesplazamiento - 1;
-            }else{
-                valorEntero = valorEntero + valorDesplazamiento
+            if(valorEntero + valorDesplazamiento > 57){
+                //valorEntero = 49 + ((valorEntero - 47 + valorDesplazamiento) % 10);
+                valorEntero = 49 + ((valorEntero - 47 + valorDesplazamiento) % 10);
+                console.log(valorEntero, valorDesplazamiento)
+               
             }
         }
+        
         let cifrado = String.fromCharCode(valorEntero);
         return mayus ? cifrado.toUpperCase() : cifrado;
     }).join('');
