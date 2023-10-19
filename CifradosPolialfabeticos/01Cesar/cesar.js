@@ -23,7 +23,10 @@ function cifrado(){
             const valorDesplazamiento = parseInt(desplazamiento.value);
             if(valorEntero + valorDesplazamiento > 57){
                 //valorEntero = 49 + ((valorEntero - 47 + valorDesplazamiento) % 10);
-                valorEntero = 49 + ((valorEntero - 47 + valorDesplazamiento) % 10);
+                valorEntero = 48 + ((valorEntero - 48 + valorDesplazamiento) % 10); 
+               
+            }else{
+                valorEntero= valorEntero + valorDesplazamiento;
             }
         }
         
